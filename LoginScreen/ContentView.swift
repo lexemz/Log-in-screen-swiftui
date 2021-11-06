@@ -23,8 +23,8 @@ struct ContentView: View {
             ButtonView(timer: timer)
             Spacer()
             Button("Log Out") {
-                // TODO: remove user
                 user.isRegistered.toggle()
+                StorageManager.shared.remove()
             }
         }
     }

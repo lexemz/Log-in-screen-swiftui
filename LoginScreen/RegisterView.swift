@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct RegisterView: View {
+    @EnvironmentObject private var user: UserManager
     @State private var userName = ""
     @State var buttonIsDisabled = true
-    @EnvironmentObject private var user: UserManager
 
     var body: some View {
         VStack {
@@ -26,7 +26,7 @@ struct RegisterView: View {
         }
         .padding()
     }
-    
+
     private var textFieldWithCounter: some View {
         HStack {
             TextField("Enter your name", text: $userName)
@@ -47,6 +47,8 @@ struct RegisterView: View {
             user.userName = userName
             user.isRegistered.toggle()
         }
+
+        StorageManager.shared.save(userName: userName)
     }
 }
 

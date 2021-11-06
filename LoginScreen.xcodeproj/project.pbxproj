@@ -15,6 +15,7 @@
 		78A28A2E2736E3D800621586 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A28A2D2736E3D800621586 /* UserManager.swift */; };
 		78A28A302736E5DF00621586 /* StarterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A28A2F2736E5DF00621586 /* StarterView.swift */; };
 		78A28A322736E7B700621586 /* TimeCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A28A312736E7B700621586 /* TimeCounter.swift */; };
+		78A28A342736EA9500621586 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A28A332736EA9400621586 /* StorageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		78A28A2D2736E3D800621586 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		78A28A2F2736E5DF00621586 /* StarterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterView.swift; sourceTree = "<group>"; };
 		78A28A312736E7B700621586 /* TimeCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCounter.swift; sourceTree = "<group>"; };
+		78A28A332736EA9400621586 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				78A28A2B2736DDCA00621586 /* RegisterView.swift */,
 				78A28A312736E7B700621586 /* TimeCounter.swift */,
 				78A28A2D2736E3D800621586 /* UserManager.swift */,
+				78A28A332736EA9400621586 /* StorageManager.swift */,
 				78A28A212736DDA300621586 /* Assets.xcassets */,
 				78A28A232736DDA300621586 /* Preview Content */,
 			);
@@ -152,6 +155,7 @@
 				78A28A2C2736DDCA00621586 /* RegisterView.swift in Sources */,
 				78A28A302736E5DF00621586 /* StarterView.swift in Sources */,
 				78A28A202736DDA000621586 /* ContentView.swift in Sources */,
+				78A28A342736EA9500621586 /* StorageManager.swift in Sources */,
 				78A28A322736E7B700621586 /* TimeCounter.swift in Sources */,
 				78A28A2E2736E3D800621586 /* UserManager.swift in Sources */,
 				78A28A1E2736DDA000621586 /* LoginScreenApp.swift in Sources */,
