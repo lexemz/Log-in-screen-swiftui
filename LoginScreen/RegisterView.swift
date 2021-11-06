@@ -12,6 +12,8 @@ struct RegisterView: View {
     @State private var userName = ""
     @State var buttonIsDisabled = true
 
+    @State private var countColor = Color.red
+
     var body: some View {
         VStack {
             textFieldWithCounter
@@ -33,8 +35,10 @@ struct RegisterView: View {
                 .onChange(of: userName) { newValue in
                     if newValue.count > 2 {
                         buttonIsDisabled = false
+                        countColor = .green
                     } else {
                         buttonIsDisabled = true
+                        countColor = .red
                     }
                 }
                 .onSubmit {
@@ -44,7 +48,7 @@ struct RegisterView: View {
                 }
 
             Text("\(userName.count)")
-                .foregroundColor(.gray)
+                .foregroundColor(countColor)
         }
     }
 
