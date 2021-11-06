@@ -8,5 +8,6 @@
 import Combine
 
 class UserManager: ObservableObject {
+    @Published var isRegistered = false // "Публикуемое" свойство класса
     var userName = ""
 }

@@ -13,8 +13,8 @@ struct LoginScreenApp: App {
     
     var body: some Scene {
         WindowGroup {
-//            ContentView()
-            RegisterView()
+            StarterView()
+                .environmentObject(user)
         }
     }
 }

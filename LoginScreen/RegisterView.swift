@@ -10,6 +10,7 @@ import SwiftUI
 struct RegisterView: View {
     @State private var userName = ""
     @State var buttonIsDisabled = true
+    @EnvironmentObject private var user: UserManager
 
     var body: some View {
         VStack {
@@ -23,6 +24,7 @@ struct RegisterView: View {
             }
             .disabled(buttonIsDisabled)
         }
+        .padding()
     }
     
     private var textFieldWithCounter: some View {
@@ -41,7 +43,10 @@ struct RegisterView: View {
     }
 
     private func registerUser() {
-        // TODO: user registration
+        if !userName.isEmpty {
+            user.userName = userName
+            user.isRegistered.toggle()
+        }
     }
 }
 
