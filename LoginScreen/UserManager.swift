@@ -9,10 +9,11 @@ import Combine
 import Foundation
 
 class UserManager: ObservableObject {
-    @Published var isRegistered = false // "Публикуемое" свойство класса
+    @Published var isRegistered = false
     var userName = ""
     
     init() {
+        
         if let userName = StorageManager.shared.get() {
             self.userName = userName
             isRegistered.toggle()

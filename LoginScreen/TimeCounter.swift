@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 class TimeCounter: ObservableObject {
-    let objectWillChange = PassthroughSubject<TimeCounter, Never>() // [Combine] свойство позволяет следить за измненеиями в классе
+    let objectWillChange = PassthroughSubject<TimeCounter, Never>() 
     var counter = 3
     var timer: Timer?
     var buttonTitle = "Start"
@@ -17,11 +17,11 @@ class TimeCounter: ObservableObject {
     func startTimer() {
         if counter > 0 {
             timer = Timer.scheduledTimer(
-                timeInterval: 1, // интенрвал в секундах
-                target: self, // класс, в котором будет реализован метод, вызываемый каждую секунду
+                timeInterval: 1,
+                target: self,
                 selector: #selector(updateCounter),
-                userInfo: nil, // пользовательская информация (размер клавиатуры и тд)
-                repeats: true // повторять ли этот метод или тикнуть один раз
+                userInfo: nil,
+                repeats: true
             )
         }
 
@@ -36,12 +36,12 @@ class TimeCounter: ObservableObject {
             buttonTitle = "Reset"
         }
         
-        objectWillChange.send(self) // [Combine] уведомление об изменении класса
+        objectWillChange.send(self)
     }
 
     private func killTimer() {
-        timer?.invalidate() // остановка таймера
-        timer = nil // удаление таймера
+        timer?.invalidate()
+        timer = nil
     }
     
     private func buttonDidTapped() {
@@ -51,6 +51,6 @@ class TimeCounter: ObservableObject {
         } else {
             buttonTitle = "Wait..."
         }
-        objectWillChange.send(self) // [Combine] уведомление об изменении класса
+        objectWillChange.send(self)
     }
 }
