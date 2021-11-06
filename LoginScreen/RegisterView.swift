@@ -37,6 +37,12 @@ struct RegisterView: View {
                         buttonIsDisabled = true
                     }
                 }
+                .onSubmit {
+                    if userName.count > 2 {
+                        registerUser()
+                    }
+                }
+
             Text("\(userName.count)")
                 .foregroundColor(.gray)
         }
