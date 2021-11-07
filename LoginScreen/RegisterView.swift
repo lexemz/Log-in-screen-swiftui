@@ -10,7 +10,9 @@ import SwiftUI
 struct RegisterView: View {
     @EnvironmentObject private var user: UserManager
     @State private var userName = ""
-    @State var buttonIsDisabled = true
+    private var nameIsValid: Bool {
+        userName.count > 3
+    }
 
     @State private var countColor = Color.red
 
@@ -24,7 +26,7 @@ struct RegisterView: View {
                     Text("OK")
                 }
             }
-            .disabled(buttonIsDisabled)
+            .disabled(!nameIsValid)
         }
         .padding()
     }
@@ -32,15 +34,6 @@ struct RegisterView: View {
     private var textFieldWithCounter: some View {
         HStack {
             TextField("Enter your name", text: $userName)
-                .onChange(of: userName) { newValue in
-                    if newValue.count > 2 {
-                        buttonIsDisabled = false
-                        countColor = .green
-                    } else {
-                        buttonIsDisabled = true
-                        countColor = .red
-                    }
-                }
                 .onSubmit {
                     if userName.count > 2 {
                         registerUser()
@@ -48,7 +41,7 @@ struct RegisterView: View {
                 }
 
             Text("\(userName.count)")
-                .foregroundColor(countColor)
+                .foregroundColor(nameIsValid ? .green : .red)
         }
     }
 
